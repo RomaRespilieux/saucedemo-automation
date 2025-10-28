@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/RomaRespilieux/saucedemo-automation/issues"
   },
-  "homepage": "https://github.com/RomaRespilieux/saucedemo-automation#readme"
+  "homepage": "https://github.com/RomaRespilieux/saucedemo-automation#readme",
+  "devDependencies": {
+    "cypress": "^15.5.0"
+  }
 }
