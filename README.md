@@ -5,6 +5,7 @@ Cypress practice project with automated tests for saucedemo website
 ``Node.js`` and ``npm`` need to be installed
 
 You can check if these are already installed with following commands:
+
 `node -v`
 
 `npm -v`
