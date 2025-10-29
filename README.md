@@ -3,13 +3,20 @@ Cypress practice project with automated tests for saucedemo website
 
 ## Prerequisites
 ``Node.js`` and ``npm`` need to be installed
+
 You can check if these are already installed with following commands:
 `node -v`
+
 `npm -v`
+
 If these are not installed yet follow these steps:
+
 > Go to the official Node.js website: https://nodejs.org
+
 > Download the LTS version (recommended for most users).
+
 > Run the installer and follow the setup instructions.
+
 > After installation, verify it.
 
 ## Make new project
