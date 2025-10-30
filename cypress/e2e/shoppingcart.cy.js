@@ -7,7 +7,7 @@ function login() {
 }
 
 
-
+//TC01  & TC02 - adding items to cart
 describe('shopping cart functionality', () => {
     // add 1 item in cart
     it('adding 1 item in cart', () => {
@@ -29,6 +29,8 @@ describe('shopping cart functionality', () => {
     });
 });
 
+
+//TC03 & TC04
 describe('shopping basket functionality', () => {
     // remove 1 item from cart
     it('remove 1 item', () => {
@@ -61,61 +63,16 @@ describe('shopping basket functionality', () => {
     });
 });
 
-describe('Buying products', () => {
+//TC05 open empty shopppiing cart
 
-    //1 product
-    it('buying 1 product', () => {
+describe('Open empty shopping cart', () => {
+    it('Should open new page and no products are present on the page', () => {
         login();
-        cy.get('#add-to-cart-sauce-labs-backpack').click();
+
         cy.get('.shopping_cart_link').click();
-        cy.get('#checkout').click();
 
-        cy.get('#first-name').type("Test");
-        cy.get('#last-name').type("User");
-        cy.get('#postal-code').type("1000");
-        cy.get('#continue').click();
-        cy.get('#finish').click();
-
-        cy.get('.pony_express').should('be.visible');
-
-        
+        cy.get('.title').should('contain', 'Your Cart');
+        //TODO validate the cart is empty
     });
-
-    //2 products
-    it('buying 2 products', () => {
-        login();
-        cy.get('#add-to-cart-sauce-labs-backpack').click();
-        cy.get('#add-to-cart-sauce-labs-bike-light').click();
-        cy.get('.shopping_cart_link').click();
-        cy.get('#checkout').click();
-
-        cy.get('#first-name').type("Test");
-        cy.get('#last-name').type("User");
-        cy.get('#postal-code').type("1000");
-        cy.get('#continue').click();
-        cy.get('#finish').click();
-
-        cy.get('.pony_express').should('be.visible');
-        
-    });
-});
-
-// cancel payment
-
-describe('Cancel payment', () => {
-    it('Should go back to the shopping page', () => {
-        login();
-        cy.get('#add-to-cart-sauce-labs-backpack').click();
-        cy.get('.shopping_cart_link').click();
-        cy.get('#checkout').click();
-
-        cy.get('#first-name').type("Test");
-        cy.get('#last-name').type("User");
-        cy.get('#postal-code').type("1000");
-        cy.get('#continue').click();
-        cy.get('#cancel').click();
-
-        cy.get('.app_logo').should('be.visible');
-
-    });
+    
 });

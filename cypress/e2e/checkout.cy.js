@@ -1,0 +1,117 @@
+describe('Buying products', () => {
+
+    //1 product
+    it('buying 1 product', () => {
+        login();
+        cy.get('#add-to-cart-sauce-labs-backpack').click();
+        cy.get('.shopping_cart_link').click();
+        cy.get('#checkout').click();
+
+        cy.get('#first-name').type("Test");
+        cy.get('#last-name').type("User");
+        cy.get('#postal-code').type("1000");
+        cy.get('#continue').click();
+        cy.get('#finish').click();
+
+        cy.get('.pony_express').should('be.visible');
+
+        
+    });
+
+    //2 products
+    it('buying 2 products', () => {
+        login();
+        cy.get('#add-to-cart-sauce-labs-backpack').click();
+        cy.get('#add-to-cart-sauce-labs-bike-light').click();
+        cy.get('.shopping_cart_link').click();
+        cy.get('#checkout').click();
+
+        cy.get('#first-name').type("Test");
+        cy.get('#last-name').type("User");
+        cy.get('#postal-code').type("1000");
+        cy.get('#continue').click();
+        cy.get('#finish').click();
+
+        cy.get('.pony_express').should('be.visible');
+        
+    });
+});
+
+// cancel payment
+
+describe('Cancel payment', () => {
+    it('Should go back to the shopping page', () => {
+        login();
+        cy.get('#add-to-cart-sauce-labs-backpack').click();
+        cy.get('.shopping_cart_link').click();
+        cy.get('#checkout').click();
+
+        cy.get('#first-name').type("Test");
+        cy.get('#last-name').type("User");
+        cy.get('#postal-code').type("1000");
+        cy.get('#continue').click();
+        cy.get('#cancel').click();
+
+        cy.get('.app_logo').should('be.visible');
+
+    });
+});
+
+// empty fields
+describe('Checkout fields empty', () => {
+    it('Should give an error message', () => {
+        login();
+        cy.get('#add-to-cart-sauce-labs-backpack').click();
+        cy.get('.shopping_cart_link').click();
+        cy.get('#checkout').click();
+
+        cy.get('#first-name').type(" ");
+        cy.get('#last-name').type(" ");
+        cy.get('#postal-code').type(" ");
+        cy.get('#continue').click();
+        cy.get('#finish').click();
+
+        // assert
+    });
+});
+ 
+
+// non existent postal code
+describe('Non-existent postal code', () => {
+    it('Should give an error', () => {
+        login();
+        cy.get('#add-to-cart-sauce-labs-backpack').click();
+        cy.get('.shopping_cart_link').click();
+        cy.get('#checkout').click();
+
+        cy.get('#first-name').type("Test");
+        cy.get('#last-name').type("User");
+        cy.get('#postal-code').type("1");
+        cy.get('#continue').click();
+        cy.get('#finish').click();
+
+        // assert
+    });
+});
+
+
+
+// invalid name 
+
+describe('Fill in invalid name', () => {
+    it('Should give an error message', () => {
+        login();
+        cy.get('#add-to-cart-sauce-labs-backpack').click();
+        cy.get('.shopping_cart_link').click();
+        cy.get('#checkout').click();
+
+        cy.get('#first-name').type("1223");
+        cy.get('#last-name').type("21");
+        cy.get('#postal-code').type("1000");
+        cy.get('#continue').click();
+        cy.get('#finish').click();
+
+        // assert
+    });
+});
+
