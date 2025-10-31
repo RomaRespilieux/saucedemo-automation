@@ -72,7 +72,9 @@ describe('Open empty shopping cart', () => {
         cy.get('.shopping_cart_link').click();
 
         cy.get('.title').should('contain', 'Your Cart');
-        //TODO validate the cart is empty
+        
+        //validate the cart is empty
+        cy.get('.cart_item').should('not.be.visible');
     });
     
 });

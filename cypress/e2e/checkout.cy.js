@@ -72,11 +72,14 @@ describe('Checkout fields empty', () => {
         cy.get('#finish').click();
 
         // assert
+        cy.get('.error-button').should(be.visible);
     });
 });
  
 
 // non existent postal code
+// update -> no check on postal code
+/*
 describe('Non-existent postal code', () => {
     it('Should give an error', () => {
         login();
@@ -91,13 +94,16 @@ describe('Non-existent postal code', () => {
         cy.get('#finish').click();
 
         // assert
+
     });
 });
 
+*/
 
 
 // invalid name 
-
+// update -> no check on name
+/*
 describe('Fill in invalid name', () => {
     it('Should give an error message', () => {
         login();
@@ -113,5 +119,5 @@ describe('Fill in invalid name', () => {
 
         // assert
     });
-});
+});*/
 
