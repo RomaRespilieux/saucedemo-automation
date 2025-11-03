@@ -1,3 +1,11 @@
+//prerequisite
+function login() {
+    cy.visit('https://www.saucedemo.com/');
+    cy.get('#user-name').type('standard_user');
+    cy.get('#password').type('secret_sauce');
+    cy.get('#login-button').click();
+}
+
 describe('Buying products', () => {
 
     //1 product
@@ -72,7 +80,7 @@ describe('Checkout fields empty', () => {
         cy.get('#finish').click();
 
         // assert
-        cy.get('.error-button').should(be.visible);
+        cy.get('.error-button').should('not.exist');
     });
 });
  

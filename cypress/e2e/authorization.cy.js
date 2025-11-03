@@ -68,16 +68,16 @@ it('should show error message after leaving fields empty', () => {
 
 //Login tijd controleren
 describe('Log in performance test', () => {
-  it('should complete login n under 2 seconds', () => {
+  it('should complete login in under 2 seconds', () => {
     const start = Date.now();
 
     cy.visit('https://www.saucedemo.com/');
 
-    cy.get('#user-name').type("standard");
-    cy.get('#password').type("sauce");
+    cy.get('#user-name').type("standard_user");
+    cy.get('#password').type("secret_sauce");
     cy.get('#login-button').click();
 
-    cy.get('.title', {timeout: 10000}).should('be.visible').then(() => {
+    cy.get('.app_logo', {timeout: 10000}).should('be.visible').then(() => {
       const duration = Date.now() - start;
       expect(duration).to.be.lessThan(2000);
     });

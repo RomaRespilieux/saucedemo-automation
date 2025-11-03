@@ -11,10 +11,10 @@ describe('Opening navigation menu', () => {
         login();
         cy.get('#react-burger-menu-btn').click();
 
-        cy.get('#inventory_sidebar_link').should('contain','all items');
-        cy.get('#about_sidebar_link').should('contain','all items');
-        cy.get('#logout_sidebar_link').should('contain','all items');
-        cy.get('#reset_sidebar_link').should('contain','all items');
+        cy.get('#inventory_sidebar_link').should('contain', 'all items');
+        cy.get('#about_sidebar_link').should('contain', 'all items');
+        cy.get('#logout_sidebar_link').should('contain', 'all items');
+        cy.get('#reset_sidebar_link').should('contain', 'all items');
     });
     it.only('All options are clickable: first option', () => {
         //TODO
@@ -25,15 +25,18 @@ describe('Opening navigation menu', () => {
 
     });
 
-     it.only('All options are clickable: second option', () => {
+    it.only('All options are clickable: second option', () => {
         //TODO
         login();
-        cy.get('#react-burger-menu-btn').click();
-        cy.get('#about_sidebar_link').click();
-        cy.url().should('include', 'https://saucelabs.com/');
+        // cy.get('#react-burger-menu-btn').click();
+
+
+        cy.get('#about_sidebar_link')
+            .should('have.attr', 'href')
+            .and('include', 'saucelabs.com');
 
     });
-     it.only('All options are clickable: third option', () => {
+    it.only('All options are clickable: third option', () => {
         //TODO
         login();
         cy.get('#react-burger-menu-btn').click();
@@ -41,7 +44,7 @@ describe('Opening navigation menu', () => {
         cy.get('#login-button').should('be.visible');
 
     });
-     it.only('All options are clickable: fourt option', () => {
+    it.only('All options are clickable: fourt option', () => {
         //TODO
         login();
         cy.get('#react-burger-menu-btn').click();

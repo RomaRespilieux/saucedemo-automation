@@ -74,7 +74,10 @@ describe('Open empty shopping cart', () => {
         cy.get('.title').should('contain', 'Your Cart');
         
         //validate the cart is empty
-        cy.get('.cart_item').should('not.be.visible');
+        cy.get('.cart_item').should('not.exist');
+
+        // not.be.visible --> element exists but is hidden
+        // not.exist --> element is not in the Document Object Model at all
     });
     
 });
