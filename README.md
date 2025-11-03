@@ -14,11 +14,8 @@ You can check if these are already installed with following commands:
 If these are not installed yet follow these steps:
 
 > Go to the official Node.js website: https://nodejs.org
-
 > Download the LTS version (recommended for most users).
-
 > Run the installer and follow the setup instructions.
-
 > After installation, verify it.
 
 ## Make new project
