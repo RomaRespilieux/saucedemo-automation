@@ -1,5 +1,5 @@
 # saucedemo-automation
-This is a Cypress practice project with automated tests for the [SauceLabs website](https://www.saucedemo.com/). 
+This is a Cypress practice project with automated tests for (https://www.saucedemo.com/). 
 The goal was to gain hands-on experience with end-to-end testing, improve my understanding of test automation, and explore best practices in writing automated tests.
 
 ## Prerequisites
@@ -14,8 +14,11 @@ You can check if these are already installed with following commands:
 If these are not installed yet follow these steps:
 
 > Go to the official Node.js website: https://nodejs.org
+
 > Download the LTS version (recommended for most users).
+
 > Run the installer and follow the setup instructions.
+
 > After installation, verify it.
 
 ## Make new project
