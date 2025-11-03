@@ -1,5 +1,6 @@
 # saucedemo-automation
-Cypress practice project with automated tests for saucedemo website
+This is a Cypress practice project with automated tests for the [SauceLabs website](https://www.saucedemo.com/). 
+The goal was to gain hands-on experience with end-to-end testing, improve my understanding of test automation, and explore best practices in writing automated tests.
 
 ## Prerequisites
 ``Node.js`` and ``npm`` need to be installed
