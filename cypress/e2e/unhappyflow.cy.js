@@ -16,6 +16,15 @@ describe('Go to products page using url without logging in', () => {
     });
 });
 
+describe('Go to checkout page using url without loggin in', () => {
+    it('Should redirect to login page', () => {
+        cy.visit('https://www.saucedemo.com/checkout-step-one.html', { failOnStatusCode: false });
+
+        cy.get('#login-button').should('be.visible');
+        
+    });
+});
+
 // Browser refresh product pagina
 describe('Testing page reload functionality', () => {
     it('should reload the page and maintain state', () => {

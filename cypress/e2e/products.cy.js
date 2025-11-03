@@ -28,7 +28,6 @@ describe('Selecting products', () => {
     });
 });
 
-
 //TC03 all products are shown
 describe('Visiting shopping page', () => {
     it('Should show all available products', () => {
@@ -42,8 +41,34 @@ describe('Visiting shopping page', () => {
         cy.get('.inventory_item_name ').should('contain', 'Test.allTheThings() T-Shirt (Red)');
 
     });
-});
 
+    // Extra: check if images are present
+    it('Should show images', () => {
+        login();
+
+        cy.get('[data-test^="inventory-item-"][data-test$="-img"]')
+            .should('have.attr', 'src')
+            .and('not.be.empty');
+
+    });
+
+    it('Should show alt text', () => {
+        login();
+
+        cy.get('[data-test^="inventory-item-"][data-test$="-img"]')
+            .should('have.attr', 'alt')
+            .and('not.be.empty');
+
+    });
+
+    it('Should show descriptions', () => {
+        login();
+
+        cy.get('.inventory_item_desc')
+            .should('not.be.empty');
+
+    });
+});
 
 //TODO TC04, TC05, TC06, TC07 - Sorting
 describe('Sorting and filtering', () => {
@@ -62,7 +87,7 @@ describe('Sorting and filtering', () => {
     it('Should be able to sort za', () => {
         login();
 
-       // cy.get('.product_sort_container').click(); -> should not be here, Cypress does not allow cy.click() on <select> elements
+        // cy.get('.product_sort_container').click(); -> should not be here, Cypress does not allow cy.click() on <select> elements
         cy.get('.product_sort_container').select('Name (Z to A)');
 
         cy.get('.product_sort_container').should('contain', 'Name (Z to A)');
@@ -74,7 +99,7 @@ describe('Sorting and filtering', () => {
     it('Should be able to sort price low-high', () => {
         login();
 
-       // cy.get('.product_sort_container').click();
+        // cy.get('.product_sort_container').click();
         cy.get('.product_sort_container').select('Price (low to high)');
 
         cy.get('.product_sort_container').should('contain', 'Price (low to high)');
@@ -87,7 +112,7 @@ describe('Sorting and filtering', () => {
     it('Should be able to sort price high-low', () => {
         login();
 
-       // cy.get('.product_sort_container').click();
+        // cy.get('.product_sort_container').click();
         cy.get('.product_sort_container').select('Price (high to low)');
 
         cy.get('.product_sort_container').should('contain', 'Price (high to low)');
@@ -96,4 +121,10 @@ describe('Sorting and filtering', () => {
 
 
     });
+    it('Should be able to show price', () => {
+        login();
+        cy.get('.inventory_item_price').should('not.be.empty');
+    });
+
+
 });
