@@ -20,11 +20,11 @@ describe('Go to products page using url without loggin in', () => {
 describe('Testing page reload functionality', () => {
     it('should reload the page and maintain state', () => {
         login();
-        cy.visit('https://www.saucedemo.com/inventory.html')
+        cy.visit('https://www.saucedemo.com/inventory.html');
         // Reload the page
-        cy.reload()
+        cy.reload();
         // Assert that the URL remains the same after reloading
-        cy.url().should('include', 'https://www.saucedemo.com/inventory.html')
+        cy.url().should('include', 'https://www.saucedemo.com/inventory.html');
     })
 })
 
