@@ -10,6 +10,7 @@ Key aspects of the project include:
 **Structure**: For this project, I intentionally did not use the Page Object Model (POM) structure, focusing instead on direct test implementation to better understand Cypress's native capabilities.
 
 ## Project structure
+```
 saucedemo-automation/
 ├── cypress/
 │   ├── e2e/
@@ -35,6 +36,7 @@ saucedemo-automation/
 ├── package-lock.json
 ├── package.json
 └── README.md
+```
 
 ## Testing types
 A total of 39 test cases were created, covering:
